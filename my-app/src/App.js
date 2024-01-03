@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './logo.svg'; // eslint-disable-line no-unused-vars
 import './App.css';
 
 // 0.React = 엔진 -> 데이터변경을 감지하여 UI를 그려주는 엔진
@@ -21,7 +21,7 @@ const b = 20; // 상수
 
 function App() {
   let c;
-  let d = undefined;
+  //let d = undefined;
 
   console.log(1, c);
 
@@ -31,7 +31,7 @@ function App() {
 
   return (
   <div>
-   <div style={{}}>Test {a === 10 ? "10 입니다." : "10이 아닙니다."}</div>
+   <div style={{mystyle}}>Test {a === 10 ? "10 입니다." : "10이 아닙니다."}</div>
    <h1 className="box-style">중입니다. {b === 20 && "20 입니다"} </h1>
    <hr/>
   </div>  
