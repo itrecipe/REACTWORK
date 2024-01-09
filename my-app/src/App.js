@@ -1,4 +1,4 @@
-import logo from './logo.svg'; // eslint-disable-line no-unused-vars
+import logo from './logo.svg';
 import './App.css';
 
 // 0.React = 엔진 -> 데이터변경을 감지하여 UI를 그려주는 엔진
@@ -15,7 +15,6 @@ import './App.css';
 // - 외부 파일에 적는 방법
 // - 라이브러리 사용 (부트스트랩, componet-styled)
 
-
 let a = 10; // 변수
 const b = 20; // 상수
 
@@ -26,15 +25,17 @@ function App() {
   console.log(1, c);
 
   const mystyle = {
-    color : "red"
+    color: 'red',
   };
 
   return (
-  <div>
-   <div style={{mystyle}}>Test {a === 10 ? "10 입니다." : "10이 아닙니다."}</div>
-   <h1 className="box-style">중입니다. {b === 20 && "20 입니다"} </h1>
-   <hr/>
-  </div>  
+    <div>
+      <div style={{ mystyle }}>
+        Test {a === 10 ? '10 입니다.' : '10이 아닙니다.'}
+      </div>
+      {<h1 className="box-style">중입니다. {b === 20 && '20 입니다'} </h1>}
+      <hr />
+    </div>
   );
 }
 
