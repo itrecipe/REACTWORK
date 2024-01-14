@@ -41,9 +41,45 @@
       console.log('4. ============ 잘러내기');
       const a4 = [1, 2, 3];
       const b4 = a4.slice(0, 2);
-      console.log(`b4의 값은 : ${b4}`); //예상결과 : 1,2 -> 0번 인덱스부터 2번 인덱스 사이의 값을 직전까지 뽑는다.
-      const c4 = [a4.slice(0, 2)];
-      console.log(`c4의 값은 : ${c4}`); //예상결과 : 1,2
+
+      //console.log(`b4의 값은 : ${b4}`); //예상결과 : 1, 2 -> 0번 인덱스부터 2번 인덱스 사이의 값을 직전까지 뽑는다.
+      //const c4 = [a4.slice(0, 2)];
+      //console.log(`c4의 값은 : ${c4}`); //예상결과 : 1,2
+
+      const c4 = [...a4.slice(0, 2), 4, ...a4.slice(2, 3)];
+      console.log(c4); //[1,2,4,3]
+
+      console.log('5. ============ 반복하기');
+      const a5 = [1, 2, 3];
+
+      // JavaScript에서는 아래 문법을 사용가능하지만 JSX 문법에선 사용이 불가능 하다.
+      // for (let i = 0; i < a5.length; i++) {
+      //   console.log(a5[i]);
+      // }
+
+      //JSX는 한줄짜리 for문을 사용해야 하는데 forEach로 반복을 돌려야함
+      // a5.forEach((n) => {
+      //   console.log(n);
+      // }); //리턴을 못함.
+
+      const b5 = a5.map((n) => n); //const b5 = [...a5]; 좌측 코드랑 해당 코드랑 같음
+      console.log(`b5의 값은 : ${b5}`);
+      console.log(b5);
+
+      const user = [
+        { id: 1, name: '구태모', phone: '1111' },
+        { id: 2, name: '이대엽', phone: '2222' },
+        { id: 3, name: '오승훈', phone: '3333' },
+      ];
+
+      const updateUserDto = {
+        id: 2,
+        name: '홍길동',
+      };
+
+      users[1].name = updateUserDto.name; //해당 방식으로 하면 최적화를 못시킨다.
+
+      console.log(users);
     </script>
   </body>
 </html>
