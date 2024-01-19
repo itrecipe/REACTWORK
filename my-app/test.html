@@ -66,7 +66,23 @@
       console.log(`b5의 값은 : ${b5}`);
       console.log(b5);
 
-      const user = [
+      //수정 연습
+      const data = { phone: '2222' };
+
+      const a6 = {
+        id: 1,
+        name: '홍길동',
+        phone: '1111',
+        age: '17',
+        gender: '남',
+      };
+      const b6 = { ...a6, ...data }; //흩뿌리기(깊은 복사)
+      console.log(b6);
+
+      //공식 받은데이터 전개연산자 + 기존데이터 전개연산자
+
+      const users = [
+        //JavaScript Obeject 추가, JSON 아님 (주의!)
         { id: 1, name: '구태모', phone: '1111' },
         { id: 2, name: '이대엽', phone: '2222' },
         { id: 3, name: '오승훈', phone: '3333' },
@@ -77,9 +93,17 @@
         name: '홍길동',
       };
 
-      users[1].name = updateUserDto.name; //해당 방식으로 하면 최적화를 못시킨다.
-
+      //users[1].name = updateUserDto.name; //해당 방식으로 하면 최적화를 못시킨다.
       console.log(users);
+
+      const newUsers = users.map(
+        (
+          user, //const newUser = {...users}; 와 동일하다.
+        ) =>
+          user.id === updateUserDto.id ? { ...user, ...updateUserDto } : user,
+      );
+
+      console.log('newUsers', newUsers);
     </script>
   </body>
 </html>
