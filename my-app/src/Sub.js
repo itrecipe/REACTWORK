@@ -1,13 +1,10 @@
 import React from 'react';
 
-//새로운 js 파일을
+let num = 10;
 
-const Sub = () => {
-  return;
-  <div>
-    <h1>Sub입니다.</h1>
-  </div>;
-};
+function Sub() {
+  return <div></div>;
+}
 
-<h1>Sub입니다.</h1>;
+export { num };
 export default Sub;

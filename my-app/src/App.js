@@ -1,25 +1,13 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
-import { useState } from 'react';
-import Sub from './Sub';
 
+//map, filter, concat, spread, slice
 function App() {
-  //let number = 1; //상태 값 아님
-  const [number, setNumber] = useState(2); //React안에 외부 라이브러리 hooks 라이브러리 상태값이 됨.
+  //실행시점 : (1) App() 함수가 최초 실행될 때
+  useEffect();
 
-  const add = () => {
-    setNumber(number + 1); //리엑트한테 number 값을 변경한다고 요청
-    console.log('add', number);
-  };
-
-  //렌더링 시점 = 상태값 변경
-  return (
-    <div>
-      <h1>숫자 : {number}</h1>
-      <button onClick={add}>더하기</button>
-      <Sub />
-    </div>
-  );
+  return;
+  <div>Hello World</div>;
 }
 
 export default App;
